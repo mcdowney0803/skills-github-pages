@@ -1,0 +1,166 @@
+:root {
+    --primary-blue: #1E90FF;
+    --primary-yellow: #FFD700;
+    --primary-red: #FF6B6B;
+    --light-bg: #f8f9fa;
+    --text-color: #333;
+    --card-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef3f7 100%);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.offer-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+header h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+section {
+    background: white;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2, h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.welcome {
+    background: linear-gradient(to right, #fff, #f0f8ff);
+    border-left: 5px solid var(--primary-blue);
+}
+
+.basic-info ul,
+.required-docs ul,
+.other-info ul,
+.notes ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.basic-info li,
+.required-docs li,
+.other-info li,
+.notes li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+}
+
+.basic-info li:before,
+.required-docs li:before,
+.other-info li:before,
+.notes li:before {
+    content: '•';
+    color: var(--primary-yellow);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+.salary-details {
+    background: #fff9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px dashed var(--primary-red);
+}
+
+.highlight {
+    color: var(--primary-red);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.contact {
+    text-align: center;
+    background: #fff9e6;
+    border: 2px solid var(--primary-yellow);
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #eee;
+}
+
+.company-sign {
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+/* 动画效果 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    animation-delay: calc(var(--animation-order) * 0.2s);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .offer-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
